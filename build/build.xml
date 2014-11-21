@@ -132,6 +132,7 @@
 
     <!-- Package -->
     <target name="package" description="Create the extension package">
+    	<echo message="${flex.sdk}/bin/adt${bin.ext}"/>
         <exec executable="${flex.sdk}/bin/adt${bin.ext}" failonerror="true" dir="../temp">
             <arg value="-package"/>
             <arg value="-target"/>
@@ -144,8 +145,8 @@
             <arg line="-platform default -C default/ ."/>
         </exec>
 
-        <move file="../temp/${name}.ane" todir="../bin"/>
-        <delete dir="../temp"/>
+        <!--<move file="../temp/${name}.ane" todir="../bin"/>
+        <delete dir="../temp"/>-->
     </target>
 
     <!-- HTML Documentation (must be run manually) -->
